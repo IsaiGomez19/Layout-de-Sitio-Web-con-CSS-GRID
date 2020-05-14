@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+}
+
+.parrafos {
+  text-align: justify;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+
+  grid-template-areas: "header header header"
+                       "contenido contenido sidebar"
+                       "widget-1 widget-2 sidebar"
+                       "footer footer footer";
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sideber,
+.contenedor .footer {
+  background: #6BCEFC;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.contenedor .header {
+  background: #F90606;
+  color: #fff;
+  grid-area: header;
+  /*grid-column-start: 1;
+  grid-column-end: 4;*/
+}
+
+.contenedor .contenido {
+  grid-area: contenido;
+  /*grid-column: span 2;*/
+}
+
+.contenedor .sidebar {
+  grid-column: 3 / 4;
+  background: #46F9A4;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  grid-area: sidebar;
+  /*grid-row: 2 / 4;*/
+}
+
+.contenedor .widget-1,
+.contenedor .widget-2 {
+  background: #BB8FCE;
+  color: #fff;
+  height: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor .widget-1 {
+  grid-area: widget-1;
+}
+
+.contenedor .widget-2 {
+  grid-area: widget-2;
+}
+
+.contenedor .footer {
+  background: #000000;
+  color: #fff;
+  grid-area: footer;
+  /*grid-column: span 3;*/
+}
+
+@media screen and (max-width: 768px) {
+  .contenedor {
+    grid-template-areas: "header header header"
+                         "contenido contenido contenido"
+                         "sidebar sidebar sidebar"
+                         "widget-1 widget-1 widget-2"
+                         "footer footer footer";
+  }
+}
+
+
+
+
+
+/*
+@media screen and (max-width: 768px) {
+  .contenedor .contenido {
+    grid-column: 1 / -1;
+  }
+
+  .contenedor .sidebar {
+    grid-column: 1 / -1;
+  }
+
+  .contenedor .width-1 {
+    grid-column: span 2;
+  }
+}
+*/
